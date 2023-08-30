@@ -1,17 +1,20 @@
 #include "lists.h"
 
 /**
-* dlistint_len - print dbl linked list
-* @h: list
-* Return: nodes
-*/
-
+ * dlistint_len - returns the number of elements in a linked dlistint_t list.
+ * @h: pointer to the list.
+ * Return: number of nodes.
+ **/
 size_t dlistint_len(const dlistint_t *h)
 {
-	size_t nod = 0;
+	const dlistint_t *node = h;
+	size_t cont = 0;
 
-	for (; h; nod++)
-		h = h->next;
+	while (node)
+	{
+		cont++;
+		node = node->next;
+	}
 
-	return (nod);
+	return (cont);
 }
